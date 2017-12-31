@@ -1,5 +1,5 @@
 <h1>景品として欲しいものリスト</h1>
-<a class="btn btn-primary" href="#" role="button">Link</a>
+<a class="btn btn-primary" href="#" role="button">登録</a>
 
 <table class="table table-bordered">
   <thead>
@@ -12,26 +12,14 @@
     </tr>
   </thead>
   <tbody class="table-info">
+  <% @wantlists.each_with_index do |wantlist, ix| %>
     <tr>
-      <th scope="row">1</th>
-      <td>キザル</td>
-      <td>メガネ</td>
-      <td>http://kizaru.com</td>
-      <td>キミは座ってるだけでいいよ。</td>
+      <th scope="row"><%= ix + 1 %></th>
+      <td><%= wantlist.name %></td>
+      <td><%= wantlist.product %></td>
+      <td><%= wantlist.url %></td>
+      <td><%= wantlist.comment %></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>ジーコ</td>
-      <td>日焼けサロンの券</td>
-      <td>http://ziko.com</td>
-      <td>バカっているなバカっ！</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>マシリト</td>
-      <td>物忘れ予防グッズ</td>
-      <td>http://mashirito.com</td>
-      <td>いいんだよ。全員に電話すれば。</td>
-    </tr>
+  <% end %>
   </tbody>
 </table>
