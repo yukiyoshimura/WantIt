@@ -1,0 +1,47 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <%= form_with(model: @wantlists,remote: true, url: show_list_create_path) do |form| %>
+      <% if @wantlists.errors.any? %>
+        <div id="error_explanation">
+
+          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <ul>
+            <% @wantlists.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">欲しいものを登録</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group field">
+          <%= form.label :名前 , class: "form-control-label"%>
+          <%= form.text_field :name, id: :name, class: "form-control" %>
+        </div>
+        <div class="form-group field">
+          <%= form.label :商品名 , class: "form-control-label"%>
+          <%= form.text_field :product, id: :product, class: "form-control" %>
+        </div>
+        <div class="form-group field">
+          <%= form.label :url , class: "form-control-label"%>
+          <%= form.text_field :url, id: :url, class: "form-control" %>
+        </div>
+        <div class="form-group field">
+          <%= form.label :ひとこと , class: "form-control-label"%>
+          <%= form.text_field :comment, id: :comment, class: "form-control" %>
+        </div>
+
+      </div>
+      <div class="modal-footer actions">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= form.submit class: "btn btn-primary"%>
+      </div>
+
+    <% end %>
+  </div>
+</div>
