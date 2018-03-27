@@ -8,19 +8,19 @@
       <th>#</th>
       <th>名前</th>
       <th>欲しいもの</th>
-      <th>URL</th>
-      <th>ひとこと</th>
+      <th>URL<%= tec %></th>
+      <th>ひとこと<%= tec %></th>
     </tr>
   </thead>
-  <tbody class="table-info">
-  <% @wantlists.each_with_index do |wantlist, ix| %>
-    <tr>
-      <th scope="row"><%= ix + 1 %></th>
-      <td><%= wantlist.name %></td>
-      <td><%= wantlist.product %></td>
-      <td><%= wantlist.url %></td>
-      <td><%= wantlist.comment %></td>
-    </tr>
-  <% end %>
+  <tbody class="table-info" style="background-color:#A9F5D0">
+    <% @wantlists.each_with_index do |wantlist, ix| %>
+      <tr>
+        <th scope="row"><%= ix + 1 %></th>
+        <td><%= wantlist.name %></td>
+        <td><%= wantlist.product %></td>
+        <td><%= wantlist.url %></td>
+        <td><%= wantlist.comment %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

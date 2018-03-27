@@ -1,11 +1,14 @@
 class ShowListController < ApplicationController
 
+  before_action :authenticate_user!
+
   def new
     @wantlists = WantList.new
     p @wantlists
 
   end
 
+  # GET /show_list/index
   def index
     p "start index"
     @wantlists = WantList.all
