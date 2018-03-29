@@ -2,8 +2,8 @@
 <%= link_to 'リスト登録', show_list_new_path, remote: true, class: "btn btn-lg btn-primary" %>
 <div id="create-user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
 
-<table class="table table-bordered table-striped">
-  <thead>
+<table class="table table-striped table-hover">
+  <thead class="table-warning">
     <tr>
       <th>#</th>
       <th>名前</th>
@@ -12,15 +12,15 @@
       <th>ひとこと</th>
     </tr>
   </thead>
-  <tbody class="table-info">
-  <% @wantlists.each_with_index do |wantlist, ix| %>
-    <tr>
-      <th scope="row"><%= ix + 1 %></th>
-      <td><%= wantlist.name %></td>
-      <td><%= wantlist.product %></td>
-      <td><%= wantlist.url %></td>
-      <td><%= wantlist.comment %></td>
-    </tr>
-  <% end %>
+  <tbody class="">
+    <% @wantlists.each_with_index do |wantlist, ix| %>
+      <tr>
+        <th scope="row"><%= ix + 1 %></th>
+        <td><%= wantlist.name %></td>
+        <td><%= wantlist.product %></td>
+        <td><%= wantlist.url %></td>
+        <td><%= wantlist.comment %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
