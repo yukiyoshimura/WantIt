@@ -1,0 +1,14 @@
+<% wantlists.each_with_index do |wantlist, ix| %>
+  <tr>
+    <th scope="row"><%= ix + 1 %></th>
+    <td><%= wantlist.user_id %></td>
+    <td><%= wantlist.product %></td>
+    <td><%= wantlist.url %></td>
+    <td><%= wantlist.comment %></td>
+    <td id="like-button<%= wantlist.id %>">
+      <% p "aaaaa" %>
+      <% p wantlist %>
+      <%= render :partial => "/likes/like", locals: {wantlist: wantlist} %>
+    </td>
+  </tr>
+<% end %>
