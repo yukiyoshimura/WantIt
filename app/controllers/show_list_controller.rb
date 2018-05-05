@@ -11,6 +11,9 @@ class ShowListController < ApplicationController
   # GET /show_list/index
   def index
     p "start index"
+#    @test = User.find_by_sql('select users.id,ifnull(likes.want_lists_id,"abc") from users,likes where users.id = likes.users_id').
+p @test
+
     @wantlists = WantList.all
   end
 
@@ -21,7 +24,7 @@ class ShowListController < ApplicationController
     input_data = wantlist_params
 
     @wantlists = WantList.new(
-        {name:input_data[:name],
+        { # name:input_data[:name],
          product:input_data[:product],
          url:input_data[:url],
          comment:input_data[:comment]

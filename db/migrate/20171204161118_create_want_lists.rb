@@ -5,7 +5,7 @@ class CreateWantLists < ActiveRecord::Migration[5.0]
       t.string :product
       t.string :url
       t.string :comment
-      t.integer :score
+      t.integer :want_lists_count
 
       t.timestamps
     end

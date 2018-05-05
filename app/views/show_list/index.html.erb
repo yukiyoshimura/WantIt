@@ -1,4 +1,4 @@
-<h1>景品として欲しいものリスト</h1>
+<h1>景品として欲しいものリスト<i class="fa fa-gift" title="edit"></i></h1>
 <%= link_to 'リスト登録', show_list_new_path, remote: true, class: "btn btn-lg btn-primary" %>
 <div id="create-user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
 
@@ -10,17 +10,10 @@
       <th>欲しいもの</th>
       <th>URL</th>
       <th>ひとこと</th>
+      <th>欲しい！</th>
     </tr>
   </thead>
-  <tbody class="">
-    <% @wantlists.each_with_index do |wantlist, ix| %>
-      <tr>
-        <th scope="row"><%= ix + 1 %></th>
-        <td><%= wantlist.name %></td>
-        <td><%= wantlist.product %></td>
-        <td><%= wantlist.url %></td>
-        <td><%= wantlist.comment %></td>
-      </tr>
-    <% end %>
+  <tbody id="like-buttons" class="">
+          <%= render :partial => "/show_list/contents", locals: {wantlists: @wantlists}  %>
   </tbody>
 </table>
