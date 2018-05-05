@@ -1,28 +1,16 @@
-<% wantlists.each_with_index do |wantlist, ix| %>
-  <tr>
-    <th scope="row"><%= ix + 1 %></th>
-    <td><%= wantlist.user_id %></td>
-    <td><%= wantlist.product %></td>
-    <td><%= wantlist.url %></td>
-    <td><%= wantlist.comment %></td>
-    <td><%#= button_to likes_url(wantlist_id: wantlist.id) do %>
-      <% if wantlist.has_liked?(current_user.id) %>
-        <% p "deleteの方" %>
-        <% p  "like-button#{wantlist.id}" %>
-        <%= button_to like_url(id: wantlist.id), method: :delete, id: "like-button#{wantlist.id}", remote: true do %>
-          <i class="fa fa-paw fa-2x"></i>
-          <% p wantlist.id %>
-          <%= wantlist.want_lists_count %>
-        <% end %>
-      <% else %>
-        <% p "createの方" %>
-        <% p  "like-button#{wantlist.id}" %>
-        <%= button_to likes_url(wantlist_id: wantlist.id), id: "like-button#{wantlist.id}", remote: true do %>
-          <i class="fa fa-heart fa-2x"></i>
-          <%= wantlist.want_lists_count %>
-        <% end %>
-      <% end %>
-      <%# end %>
-    </td>
-  </tr>
+<% if wantlist.has_liked?(current_user.id) %>
+  <% p "deleteの方" %>
+  <% p "like-button#{wantlist.id}" %>
+  <%= button_to like_url(id: wantlist.id), method: :delete, remote: true do %>
+    <i class="fa fa-paw fa-2x"></i>
+    <% p wantlist.id %>
+    <%= wantlist.want_lists_count %>
+  <% end %>
+<% else %>
+  <% p "createの方" %>
+  <% p "like-button#{wantlist.id}" %>
+  <%= button_to likes_url(wantlist_id: wantlist.id), remote: true do %>
+    <i class="fa fa-heart fa-2x"></i>
+    <%= wantlist.want_lists_count %>
+  <% end %>
 <% end %>
