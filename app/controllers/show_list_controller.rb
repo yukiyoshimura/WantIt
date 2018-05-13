@@ -1,6 +1,6 @@
 class ShowListController < ApplicationController
 
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
 
   def new
     @wantlists = WantList.new
@@ -17,11 +17,15 @@ class ShowListController < ApplicationController
     p "start create"
     input_data = wantlist_params
 
+    # todo あとでmodule化する
+    no_login_user = 1
+
     @wantlists = WantList.new(
       {
-       user_id: current_user.id,
+       user_id: current_user&.id || no_login_user,
        product:input_data[:product],
        url:input_data[:url],
+       want_lists_count: 1,
        comment:input_data[:comment]
       }
     )

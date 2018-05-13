@@ -1,16 +1,20 @@
-<% if wantlist.has_liked?(current_user.id) %>
-  <% p "deleteの方" %>
-  <% p "like-button#{wantlist.id}" %>
-  <%= button_to like_url(id: wantlist.id), method: :delete, remote: true do %>
-    <i class="fa fa-paw fa-2x"></i>
-    <% p wantlist.id %>
-    <%= wantlist.want_lists_count %>
+<% if user_signed_in? %>
+  <% if wantlist.has_liked?(current_user.id) %>
+    <% p "deleteの方" %>
+    <% p "like-button#{wantlist.id}" %>
+    <%= button_to like_url(id: wantlist.id), method: :delete, remote: true do %>
+      <i class="fa fa-paw fa-2x"></i>
+      <% p wantlist.id %>
+      <%= wantlist.want_lists_count %>
+    <% end %>
+  <% else %>
+    <% p "createの方" %>
+    <% p "like-button#{wantlist.id}" %>
+    <%= button_to likes_url(wantlist_id: wantlist.id), remote: true do %>
+      <i class="fa fa-heart fa-2x"></i>
+      <%= wantlist.want_lists_count %>
+    <% end %>
   <% end %>
 <% else %>
-  <% p "createの方" %>
-  <% p "like-button#{wantlist.id}" %>
-  <%= button_to likes_url(wantlist_id: wantlist.id), remote: true do %>
-    <i class="fa fa-heart fa-2x"></i>
-    <%= wantlist.want_lists_count %>
-  <% end %>
+  <%= wantlist.want_lists_count %>
 <% end %>

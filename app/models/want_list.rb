@@ -2,14 +2,14 @@
 #
 # Table name: want_lists
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  product    :string(255)
-#  url        :string(255)
-#  comment    :string(255)
-#  score      :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id               :integer          not null, primary key
+#  user_id          :integer
+#  product          :string(255)
+#  url              :string(255)
+#  comment          :string(255)
+#  want_lists_count :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 class WantList < ApplicationRecord
