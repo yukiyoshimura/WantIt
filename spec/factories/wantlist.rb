@@ -1,4 +1,3 @@
-=begin
 FactoryBot.define do
   factory :wantlist, class: WantList do
     user_id 1
@@ -10,4 +9,3 @@ FactoryBot.define do
     updated_at Time.now
   end
 end
-=end
