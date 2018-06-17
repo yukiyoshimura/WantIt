@@ -5,7 +5,6 @@ class ShowListController < ApplicationController
   def new
     @wantlists = WantList.new
     p @wantlists
-
   end
 
   # GET /show_list/index
@@ -14,15 +13,10 @@ class ShowListController < ApplicationController
   end
 
   def create
-    p "start create"
     input_data = wantlist_params
-
-    # todo あとでmodule化する
-    no_login_user = 1
-
     @wantlists = WantList.new(
       {
-       user_id: current_user&.id || no_login_user,
+       user_id: current_user&.id || UserConfig::NOT_LOGIN_USER,
        product:input_data[:product],
        url:input_data[:url],
        want_lists_count: 1,
@@ -47,13 +41,13 @@ class ShowListController < ApplicationController
 
     redirect_to :action => "index"
   end
-  
+
   private
-  
+
   def wantlist_params
     p 'start wantlist_prams'
     params.require(:want_list)
   end
-  
-  
+
+
 end
