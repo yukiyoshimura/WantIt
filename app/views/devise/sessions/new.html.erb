@@ -1,9 +1,9 @@
 <div style="text-align:center;">
 <!-- ログイン画面 -->
   <div class="mainVisual">
-    <video src="/Sunset.mp4" poster="" autoplay loop muted></video>
+    <img src="/box.jpg" poster="" autoplay loop muted></img>
   </div>
-  <div class="main-movie">
+  <div class="main-img">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field-email">
         <%= f.label :email %><br />
@@ -23,7 +23,7 @@
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "Sign in" %>
+        <%= f.submit "ログイン" %>
       </div>
     <% end %>
 
