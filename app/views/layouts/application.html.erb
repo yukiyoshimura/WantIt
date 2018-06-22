@@ -9,15 +9,18 @@
 
     <div class="header">
       <nav>
-        <% if user_signed_in? %>
-          <!-- *_path はUserモデルを作成したときに、
-          deviseにより自動で作成されてますので、rake routesで確認できる -->
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'プロフィール変更', edit_user_registration_path %> |
-          <%= link_to "ログアウト", sign_out_path %>
-        <% else %>
-          <%= link_to "ログイン", new_user_session_path %>
-        <% end %>
+        <div class ="content">
+          <%= link_to show_list_index_path do %>
+            <%= image_tag "/logo.jpg" %>
+         <% end %>
+          <% if user_signed_in? %>
+            <strong><%= current_user.email %></strong>.
+            <%= link_to 'プロフィール変更', edit_user_registration_path %> |
+            <%= link_to "ログアウト", sign_out_path %>
+          <% else %>
+            <%= link_to "ログイン", new_user_session_path %>
+          <% end %>
+        </div>
       </nav>
     </div>
   </head>
