@@ -5,7 +5,6 @@
     <td><%= wantlist.url %></td>
     <td><%= wantlist.comment %></td>
     <td id="like-button<%= wantlist.id %>">
-      <% p "aaaaa" %>
       <% p wantlist %>
       <%= render :partial => "/likes/like", locals: {wantlist: wantlist} %>
     </td>

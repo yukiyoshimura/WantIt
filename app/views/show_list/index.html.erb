@@ -1,4 +1,3 @@
-<h1>景品として欲しいものリスト<i class="fa fa-gift" title="edit"></i></h1>
 <%= link_to 'リスト登録', show_list_new_path, remote: true, class: "btn btn-lg btn-primary" %>
 <div id="create-user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
 
@@ -13,6 +12,6 @@
     </tr>
   </thead>
   <tbody id="like-buttons" class="">
-          <%= render :partial => "/show_list/contents", locals: {wantlists: @wantlists}  %>
+    <%= render :partial => "/show_list/contents", locals: {wantlists: @wantlists} %>
   </tbody>
 </table>
