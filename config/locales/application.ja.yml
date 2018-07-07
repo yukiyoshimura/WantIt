@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      want_list: 欲しいもの
+      user: ユーザ
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+      want_list:
+        id: id
+        product: 欲しいもの
+        url: URL
+        comment: コメント
+        want_lists_count: いいね
