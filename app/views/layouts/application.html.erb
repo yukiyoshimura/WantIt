@@ -13,7 +13,8 @@
         <div class ="content">
           <%= link_to show_list_index_path do %>
             <%= image_tag "/wantit_logo.png" %>
-         <% end %>
+          <% end %>
+
           <% if user_signed_in? %>
             <strong><%= current_user.email %></strong>
             <%= link_to 'プロフィール変更', edit_user_registration_path %> |
