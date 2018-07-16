@@ -1,6 +1,6 @@
 <div class="modal-dialog" role="document">
   <div class="modal-content">
-    <%= form_with(model: @wantlists,remote: true, url: show_list_create_path) do |form| %>
+    <%= form_with(model: @wantlists,remote: true, url: show_list_create_path) do |f| %>
       <% if @wantlists.errors.any? %>
         <div id="error_explanation">
 
@@ -20,21 +20,21 @@
       </div>
       <div class="modal-body">
         <div class="form-group field">
-          <%= form.label :商品名 , class: "form-control-label"%>
-          <%= form.text_field :product, id: :product, class: "form-control" %>
+          <%= f.label :商品名 , class: "form-control-label"%>
+          <%= f.text_field :product, id: :product, class: "form-control" %>
         </div>
         <div class="form-group field">
-          <%= form.label :url , class: "form-control-label"%>
-          <%= form.text_field :url, id: :url, class: "form-control" %>
+          <%= f.label :url , class: "form-control-label"%>
+          <%= f.text_field :url, id: :url, class: "form-control" %>
         </div>
         <div class="form-group field">
-          <%= form.label :ひとこと , class: "form-control-label"%>
-          <%= form.text_field :comment, id: :comment, class: "form-control" %>
+          <%= f.label :ひとこと , class: "form-control-label"%>
+          <%= f.text_field :comment, id: :comment, class: "form-control" %>
         </div>
       </div>
       <div class="modal-footer actions">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-        <%= form.submit value: "登録", class: "btn btn-primary"%>
+        <%= f.submit "登録", class: "btn btn-primary"%>
       </div>
     <% end %>
   </div>
