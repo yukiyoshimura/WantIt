@@ -10,7 +10,7 @@
 
     <div class="header">
       <nav>
-        <div class ="content">
+        <div class="content">
           <%= link_to show_list_index_path do %>
             <%= image_tag "/wantit_logo.png" %>
           <% end %>
@@ -20,7 +20,11 @@
             <%= link_to 'プロフィール変更', edit_user_registration_path %> |
             <%= link_to "ログアウト", sign_out_path %>
           <% else %>
-            <%= link_to "ログイン", new_user_session_path %>
+            <div class="login-link">
+              <% unless request.path_info == "/users/sign_in" %>
+                <%= link_to "ログインしていいねをする", new_user_session_path, class: "btn btn-sm btn-info" %>
+              <% end %>
+            </div>
           <% end %>
         </div>
       </nav>
