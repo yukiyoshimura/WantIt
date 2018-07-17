@@ -4,8 +4,8 @@
     <td><%= wantlist.product %></td>
     <td><%= wantlist.url %></td>
     <td><%= wantlist.comment %></td>
+    <%# いいねボタンのidを連番で採番 %>
     <td id="like-button<%= wantlist.id %>">
-      <% p wantlist %>
       <%= render :partial => "/likes/like", locals: {wantlist: wantlist} %>
     </td>
   </tr>
