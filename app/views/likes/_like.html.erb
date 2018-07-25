@@ -7,13 +7,13 @@
     <% end %>
   <% else %>
     <%# "create" %>
-    <%= button_to likes_url(wantlist_id: wantlist.id), remote: true do %>
+    <%= button_to likes_url(id: wantlist.id), remote: true do %>
       <i class="fa fa-heart fa-2x faa-pulse animated-hover fa-color-normal"></i>
       <%= wantlist.want_lists_count %>
     <% end %>
   <% end %>
 <% else %>
-  <%= button_to likes_url(wantlist_id: wantlist.id), remote: true, disabled: true do %>
+  <%= button_to likes_url(id: wantlist.id), remote: true, disabled: true do %>
     <i class="fa fa-heart fa-2x faa-pulse animated-hover fa-color-normal"></i>
     <%= wantlist.want_lists_count %>
   <% end %>
