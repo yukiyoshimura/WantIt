@@ -17,6 +17,6 @@ class WantList < ApplicationRecord
   has_many :likes
 
   def has_liked?(user_id)
-    likes.find_by(user_id: user_id)
+    likes.find_by(user_id: user_id) || self.user_id == user_id
   end
 end
