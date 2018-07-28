@@ -16,6 +16,8 @@ class WantList < ApplicationRecord
   belongs_to :user
   has_many :likes
 
+  validates :product, presence: true
+
   def has_liked?(user_id)
     likes.find_by(user_id: user_id) || self.user_id == user_id
   end
